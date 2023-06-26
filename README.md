@@ -1,5 +1,14 @@
-# test
+# Info
+
+https://developer.ibm.com/learningpaths/kubernetes-operators/develop-deploy-simple-operator/create-operator/
 // TODO(user): Add simple overview of use/purpose
+export IMG=docker.io/96297467939/webapp-operator:latest
+  508  2023-06-26 19:50:44 make docker-build IMG=$IMG
+  509  2023-06-26 19:50:58 docker images
+  510  2023-06-26 19:51:03 podman images
+  511  2023-06-26 19:51:11 make docker-push IMG=$IMG
+  512  2023-06-26 19:52:34 history
+
 
 ## Description
 // TODO(user): An in-depth paragraph about your project and overview of use
