@@ -84,6 +84,7 @@ func (r *WebappReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctr
 	errw := r.Client.Get(context.TODO(), findMe, found)
 	if errw != nil && errors.IsNotFound(err) {
 		size := int32(1) //default replica
+
 		dep := &appsv1.Deployment{
 			ObjectMeta: metav1.ObjectMeta{
 				Name:      instance.Name,
@@ -100,10 +101,10 @@ func (r *WebappReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctr
 					},
 					Spec: corev1.PodSpec{
 						Containers: []corev1.Container{{
-							Image:   "quay.io/ocsci/nginx:latest",
-							Name:    "nginx-operator",
+							Image:   instance.Spec.Image,
+							Name:    instance.Spec.Name,
 							Command: []string{"/bin/echo"},
-							Args:    []string{" from the pod"},
+							Args:    []string{instance.Spec.Content},
 						}},
 					},
 				},
