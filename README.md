@@ -8,6 +8,15 @@ export NAMESPACE=webapp-demo-project
 make docker-build IMG=$IMG
 make docker-push IMG=$IMG
 
+For Building Bundles : (Openshift Operator Framework ) :
+
+https://docs.openshift.com/container-platform/4.8/operators/operator_sdk/osdk-working-bundle-images.html
+
+make bundle-build BUNDLE_IMG=docker.io/96297467939/webapp-operator-bundle:latest
+
+podman push docker.io/96297467939/webapp-operator-bundle
+
+
 ## Description
 // TODO(user): An in-depth paragraph about your project and overview of use
 
