@@ -1,5 +1,12 @@
 # test
 // TODO(user): Add simple overview of use/purpose
+Image :  https://docker.io/96297467939/webapp-operator
+https://developer.ibm.com/learningpaths/kubernetes-operators/develop-deploy-simple-operator/create-operator/
+
+export IMG=quay.io/rh_ee_ves/webapp-operator:latest
+export NAMESPACE=webapp-demo-project
+make docker-build IMG=$IMG
+make docker-push IMG=$IMG
 
 ## Description
 // TODO(user): An in-depth paragraph about your project and overview of use
