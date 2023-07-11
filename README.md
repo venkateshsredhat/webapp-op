@@ -1,13 +1,20 @@
-# Info
-
-https://developer.ibm.com/learningpaths/kubernetes-operators/develop-deploy-simple-operator/create-operator/
+# test
 // TODO(user): Add simple overview of use/purpose
-export IMG=docker.io/96297467939/webapp-operator:latest
-  508  2023-06-26 19:50:44 make docker-build IMG=$IMG
-  509  2023-06-26 19:50:58 docker images
-  510  2023-06-26 19:51:03 podman images
-  511  2023-06-26 19:51:11 make docker-push IMG=$IMG
-  512  2023-06-26 19:52:34 history
+Image :  https://docker.io/96297467939/webapp-operator
+https://developer.ibm.com/learningpaths/kubernetes-operators/develop-deploy-simple-operator/create-operator/
+
+export IMG=quay.io/rh_ee_ves/webapp-operator:latest
+export NAMESPACE=webapp-demo-project
+make docker-build IMG=$IMG
+make docker-push IMG=$IMG
+
+For Building Bundles : (Openshift Operator Framework ) :
+
+https://docs.openshift.com/container-platform/4.8/operators/operator_sdk/osdk-working-bundle-images.html
+
+make bundle-build BUNDLE_IMG=docker.io/96297467939/webapp-operator-bundle:latest
+
+podman push docker.io/96297467939/webapp-operator-bundle
 
 
 ## Description
